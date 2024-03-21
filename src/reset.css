@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root,
+html {
+
+    --primary-background-color: #2F2E41;
+    --secondary-background-color: #ffffff;
+    
+    --text-color: #333333;
+    --accent-color: #2F2E41;
+
+    --border-gray-color: #D9D9D9;
+
+    --button-primary-color: #009EDD;
+    --button-primary-hover: #0073a1;
+    --button-secondary-color: #039B00;
+
+    --text-white-color: #ffffff;
+    --text-gray-color: #999999;
+
+    font-size: 62.5%;
+}
+
+
+body {
+    background: var(--primary-background-color);
+}
+
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url(./fonts/OpenSans.ttf) format('truetype');
+}
+
