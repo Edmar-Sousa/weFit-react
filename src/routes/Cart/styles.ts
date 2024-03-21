@@ -84,10 +84,6 @@ export const MovieTitle = styled(TitlePrimaryStyle)`
     color: var(--accent-color);
 `
 
-export const MovieImage = styled.img`
-    width: 64px;
-`
-
 export const MovieContainer = styled.div`
     width: 100%;
     height: 83px;

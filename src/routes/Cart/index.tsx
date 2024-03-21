@@ -8,6 +8,7 @@ import ChangeQuantity from './ChangeQuantity'
 
 import EmptyMessage from '@/components/EmptyMessage'
 import Button from '@/components/Button'
+import Image from '@/components/Image'
 
 import {
     PageContainer,
@@ -17,7 +18,6 @@ import {
     TotalSection,
     TotalContainer,
     ButtonContainer,
-    MovieImage,
     MovieContainer,
     MovieTitle,
     MovieHeader,
@@ -90,7 +90,11 @@ function Cart() {
 
             {cart.map((cartItem) => (
                 <MovieContainer key={cartItem.movie.id}>
-                    <MovieImage src={cartItem.movie.image} />
+                    <Image
+                        src={cartItem.movie.image}
+                        alt={cartItem.movie.title}
+                        width="64px"
+                    />
 
                     <MovieInformation>
                         <MovieHeader>
