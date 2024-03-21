@@ -4,6 +4,14 @@
 
 # weFit - teste react
 
+### tecnologias
+
+-   ReactJs
+-   Styled-Components
+-   TypeScript
+-   ReactQuery
+-   Zustand
+
 ```bash
 
 # clone the project
