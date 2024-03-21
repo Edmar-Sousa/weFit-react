@@ -20,15 +20,6 @@ export const MovieListItem = styled.li`
     background: var(--secondary-background-color);
 `
 
-export const MovieImage = styled.img`
-    margin: auto;
-
-    width: 147px;
-    margin: auto;
-
-    display: block;
-`
-
 export const MovieTitle = styled.p`
     font-family: OpenSans, sans-serif;
     font-weight: bold;

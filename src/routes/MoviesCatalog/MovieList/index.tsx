@@ -7,7 +7,6 @@ import { formatCurrency } from '@/utils/formater'
 import ButtonComponent from '@/components/Button'
 
 import {
-    MovieImage,
     MovieListItem,
     MoviePrice,
     MovieTitle,
@@ -15,6 +14,7 @@ import {
 } from './styles'
 
 import ShoppingCartIcon from '@/icons/shoppingcart.svg'
+import Image from '@/components/Image'
 
 function MovieList() {
     const movies = useMoviesStore((state) => state.movies)
@@ -31,7 +31,11 @@ function MovieList() {
         <MoviesListContainer>
             {movies.map((movie) => (
                 <MovieListItem key={movie.id}>
-                    <MovieImage src={movie.image} alt={movie.title} />
+                    <Image
+                        src={movie.image}
+                        alt={movie.title}
+                        width="147px"
+                    ></Image>
 
                     <MovieTitle>{movie.title}</MovieTitle>
                     <MoviePrice>{formatCurrency(movie.price)}</MoviePrice>
