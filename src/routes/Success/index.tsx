@@ -21,7 +21,12 @@ function Success() {
                 alt="Imagem de um homen simbolizando que a compra foi finalizada"
             />
 
-            <ButtonComponent.Root maxwidth={173} onClick={handleGoBack}>
+            <ButtonComponent.Root
+                type="button"
+                maxwidth={173}
+                onClick={handleGoBack}
+                aria-label="Botão para voltar para a pagina de catalogo"
+            >
                 voltar
             </ButtonComponent.Root>
         </PageContainer>

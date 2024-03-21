@@ -41,9 +41,11 @@ function MovieList() {
                     <MoviePrice>{formatCurrency(movie.price)}</MoviePrice>
 
                     <ButtonComponent.Root
+                        type="button"
                         onClick={() => handlerAddMovieInCart(movie)}
                         $green={!!getCartItem(movie.id)}
                         $transform="uppercase"
+                        aria-label="Botão para adicionar filme ao carrinho"
                     >
                         <ButtonComponent.LeftGroup>
                             <img
