@@ -21,7 +21,7 @@ function ChangeQuantity({ onChange, quantity }: ChangeQuantityProps) {
 
     const handlerAction = useCallback(
         (add: number) => {
-            const updateValue = quantity + add
+            const updateValue = quantity + add < 0 ? 0 : quantity + add
             onChange(updateValue)
         },
         [quantity, onChange]
