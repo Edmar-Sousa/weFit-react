@@ -1,28 +1,34 @@
 <p align="center">
-<img src="https://user-images.githubusercontent.com/54115624/216507723-680f5174-9963-4b6f-b860-605d751aa02f.png" width="400">
+  <img src="https://user-images.githubusercontent.com/54115624/216507723-680f5174-9963-4b6f-b860-605d751aa02f.png" width="400">
 </p>
 
-# weFit - teste react
+# weFit - Teste React :running:
 
-### tecnologias
 
--   ReactJs
--   Styled-Components
--   TypeScript
--   ReactQuery
--   Zustand
+
+[Veja o resultado aqui!](https://we-fit-react-nine.vercel.app/) :link:
+
+![preview](https://github.com/Edmar-Sousa/weFit-react/blob/master/preview.png)
+
+### Tecnologias Utilizadas :computer:
+
+-   ReactJs ⚛️
+-   Styled-Components 💅
+-   TypeScript 🟦
+-   ReactQuery 🔍
+-   Zustand 🦋
 
 ```bash
 
-# clone the project
+# Clonar o projeto
 git clone https://github.com/Edmar-Sousa/weFit-react.git
 
 cd weFit-react
 
-# install dependecys
+# Instalar as dependências
 npm install
 
-# run aplication
+# Executar a aplicação
 npm run dev
 
 ```
