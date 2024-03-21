@@ -7,7 +7,7 @@ import { formatCurrency } from '@/utils/formater'
 import ChangeQuantity from './ChangeQuantity'
 
 import EmptyMessage from '@/components/EmptyMessage'
-import Button from '@/components/Button'
+import ButtonComponent from '@/components/Button'
 import Image from '@/components/Image'
 
 import {
@@ -73,9 +73,14 @@ function Cart() {
                 <EmptyMessage.Title text="Parece que não há nada por aqui :("></EmptyMessage.Title>
                 <EmptyMessage.Image emptyIcon={emptyIcon}></EmptyMessage.Image>
                 <EmptyMessage.Line />
-                <Button.Root maxwidth={173} onClick={handleNavigateToBack}>
+                <ButtonComponent.Root
+                    type="button"
+                    maxwidth={173}
+                    onClick={handleNavigateToBack}
+                    aria-label="Botão para voltar para a pagina de catalogo"
+                >
                     Voltar
-                </Button.Root>
+                </ButtonComponent.Root>
             </EmptyMessage.Root>
         )
 
@@ -188,12 +193,14 @@ function Cart() {
                 </TotalSection>
 
                 <ButtonContainer>
-                    <Button.Root
+                    <ButtonComponent.Root
+                        type="button"
                         $transform="uppercase"
                         onClick={handleFinishPurchase}
+                        aria-label="Botão para finalizar pedido"
                     >
                         Finalizar pedido
-                    </Button.Root>
+                    </ButtonComponent.Root>
                 </ButtonContainer>
             </TotalContainer>
         </PageContainer>
