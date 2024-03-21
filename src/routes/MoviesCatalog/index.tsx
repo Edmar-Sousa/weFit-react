@@ -7,11 +7,17 @@ import { useMoviesStore } from '@/store/moviesStore'
 
 import emptyIcon from '@/icons/empty.svg'
 import MovieList from './MovieList'
+import { LoaddingContainer } from './styles'
 
 function MoviesCatalog() {
     const { data: movies, isLoading, refetch, isSuccess } = useMoviesData()
 
-    if (isLoading) return <Loading />
+    if (isLoading)
+        return (
+            <LoaddingContainer>
+                <Loading />
+            </LoaddingContainer>
+        )
 
     if (!movies || movies?.length == 0)
         return (
