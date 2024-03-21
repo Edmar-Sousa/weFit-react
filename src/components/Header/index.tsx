@@ -6,6 +6,7 @@ import {
     CartTitle,
     HeaderPage,
     LinkStyled,
+    NavigationContainer,
 } from './styles'
 
 import BagIcon from '@/icons/bag.svg'
@@ -15,19 +16,21 @@ function Header() {
 
     return (
         <HeaderPage>
-            <LinkStyled to="/">WeMovies</LinkStyled>
+            <NavigationContainer>
+                <LinkStyled to="/">WeMovies</LinkStyled>
 
-            <CartContainer to="/carrinho">
-                <div>
-                    <CartTitle>Meu Carrinho</CartTitle>
-                    <CartItems>{countCartItems} itens</CartItems>
-                </div>
+                <CartContainer to="/carrinho">
+                    <div>
+                        <CartTitle>Meu Carrinho</CartTitle>
+                        <CartItems>{countCartItems} itens</CartItems>
+                    </div>
 
-                <img
-                    src={BagIcon}
-                    alt="Icone de uma sacola de super-mercado"
-                ></img>
-            </CartContainer>
+                    <img
+                        src={BagIcon}
+                        alt="Icone de uma sacola de super-mercado"
+                    ></img>
+                </CartContainer>
+            </NavigationContainer>
         </HeaderPage>
     )
 }

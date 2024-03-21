@@ -6,6 +6,10 @@ export const HeaderPage = styled.header`
 
     max-width: 1080px;
     margin: auto;
+`
+
+export const NavigationContainer = styled.nav`
+    width: 100%;
 
     display: flex;
     align-items: center;
