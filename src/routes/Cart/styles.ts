@@ -26,9 +26,12 @@ export const TotalSection = styled(flex)`
     }
 `
 
-export const TotalContainer = styled(flex)`
+export const TotalContainer = styled.section`
     width: 100%;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: column;
 
     @media (min-width: 518px) {

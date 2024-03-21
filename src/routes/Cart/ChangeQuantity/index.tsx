@@ -29,18 +29,27 @@ function ChangeQuantity({ onChange, quantity }: ChangeQuantityProps) {
 
     return (
         <InputContainer>
-            <ButtonIcon type="button" onClick={() => handlerAction(-1)}>
+            <ButtonIcon
+                type="button"
+                onClick={() => handlerAction(-1)}
+                aria-label="Botão para remover uma unidade do carrinho"
+            >
                 <img src={MinusIcon} alt="Icone do sinal de menos" />
             </ButtonIcon>
 
             <NumberInput
                 type="number"
+                name="quantity"
                 min={1}
                 value={quantity}
                 onChange={handlerChange}
             />
 
-            <ButtonIcon type="button" onClick={() => handlerAction(1)}>
+            <ButtonIcon
+                type="button"
+                onClick={() => handlerAction(1)}
+                aria-label="Botão para adicionar uma unidade ao carrinho"
+            >
                 <img src={PlusIcon} alt="Icone do sinal de adicionar" />
             </ButtonIcon>
         </InputContainer>
