@@ -6,6 +6,8 @@ export const MoviesListContainer = styled.ul`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 16px;
+
+    padding-bottom: 20px;
 `
 
 export const MovieListItem = styled.li`
