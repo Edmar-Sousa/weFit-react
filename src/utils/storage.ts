@@ -4,7 +4,7 @@ export function setCartLocalStorage(value: Array<CartItem>) {
     window.localStorage.setItem('cart', JSON.stringify(value))
 }
 
-export function getItemLocalStoraeg(): Array<CartItem> {
+export function getCartLocalStoraeg(): Array<CartItem> {
     const cart = window.localStorage.getItem('cart')
 
     if (!cart) return []
