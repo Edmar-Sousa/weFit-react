@@ -10,7 +10,14 @@ export const MoviesListContainer = styled.ul`
 
 export const MovieListItem = styled.li`
     width: 100%;
+    height: 100%;
+
+    min-height: 330px;
     max-width: 340px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     margin: auto;
 
