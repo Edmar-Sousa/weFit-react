@@ -4,3 +4,8 @@ export interface MovieDataType {
     price: number
     image: string
 }
+
+export interface CartItem {
+    movie: MovieDataType
+    quantity: number
+}

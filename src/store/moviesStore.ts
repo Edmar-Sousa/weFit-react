@@ -1,12 +1,7 @@
 import { create } from 'zustand'
 
-import { MovieDataType } from '@/interfaces/movies-data'
+import { MovieDataType, CartItem } from '@/interfaces/movies-data'
 import { formatCurrency } from '@/utils/formater'
-
-interface CartItem {
-    movie: MovieDataType
-    quantity: number
-}
 
 interface MoviesStore {
     movies: MovieDataType[]
