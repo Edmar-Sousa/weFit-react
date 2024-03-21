@@ -19,12 +19,8 @@ function Image({ src, alt, width }: LoaddingImageProps) {
     }, [])
 
     return (
-        <>
-            {isLoadding && (
-                <LoaddingContainer>
-                    <Loading />
-                </LoaddingContainer>
-            )}
+        <LoaddingContainer $width={width}>
+            {isLoadding && <Loading />}
 
             <Img
                 src={src}
@@ -33,7 +29,7 @@ function Image({ src, alt, width }: LoaddingImageProps) {
                 $loaded={isLoadding}
                 onLoad={handleOnLoadImage}
             />
-        </>
+        </LoaddingContainer>
     )
 }
 

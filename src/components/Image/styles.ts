@@ -1,7 +1,12 @@
 import styled from 'styled-components'
 
-export const LoaddingContainer = styled.div`
-    width: 100%;
+interface LoaddingContainerProps {
+    $width: string
+}
+
+export const LoaddingContainer = styled.div<LoaddingContainerProps>`
+    width: ${({ $width }) => $width};
+    margin: auto;
 
     display: flex;
     align-items: center;
