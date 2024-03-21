@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const MessageContainer = styled.div`
+export const MessageContainer = styled.section`
     width: 100%;
     min-height: 596px;
 
