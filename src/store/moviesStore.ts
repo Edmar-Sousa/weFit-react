@@ -2,6 +2,7 @@ import { create } from 'zustand'
 
 import { MovieDataType, CartItem } from '@/interfaces/movies-data'
 import { formatCurrency } from '@/utils/formater'
+import { getCartLocalStoraeg, setCartLocalStorage } from '@/utils/storage'
 
 interface MoviesStore {
     movies: MovieDataType[]
@@ -22,17 +23,21 @@ interface MoviesStore {
 
 export const useMoviesStore = create<MoviesStore>((set, get) => ({
     movies: [],
-    cart: [],
+    cart: getCartLocalStoraeg(),
 
     setMovies: (movies: MovieDataType[]) => set(() => ({ movies })),
 
     getCartItemCount: () => get().cart.length,
 
     finishPurchase: () =>
-        set((state) => ({
-            ...state,
-            cart: [],
-        })),
+        set((state) => {
+            setCartLocalStorage([])
+
+            return {
+                ...state,
+                cart: [],
+            }
+        }),
 
     getCartTotalPrice: () => {
         const total = get().cart.reduce(
@@ -47,11 +52,15 @@ export const useMoviesStore = create<MoviesStore>((set, get) => ({
 
     updateCartItemQuantity: (movieId: number, quantity: number) =>
         set((state) => {
+            const cart = state.cart.map((item) =>
+                item.movie.id == movieId ? { ...item, quantity } : item
+            )
+
+            setCartLocalStorage(cart)
+
             return {
                 ...state,
-                cart: state.cart.map((item) =>
-                    item.movie.id == movieId ? { ...item, quantity } : item
-                ),
+                cart,
             }
         }),
 
@@ -61,20 +70,23 @@ export const useMoviesStore = create<MoviesStore>((set, get) => ({
                 (cartItem) => cartItem.movie.id == movie.id
             )
 
+            let cart = []
+
             if (movieAlreadyExistsInCart) {
-                return {
-                    ...state,
-                    cart: state.cart.map((item) =>
-                        item.movie.id == movie.id
-                            ? { ...item, quantity: item.quantity + 1 }
-                            : item
-                    ),
-                }
+                cart = state.cart.map((item) =>
+                    item.movie.id == movie.id
+                        ? { ...item, quantity: item.quantity + 1 }
+                        : item
+                )
+            } else {
+                cart = [...state.cart, { movie, quantity: 1 }]
             }
+
+            setCartLocalStorage(cart)
 
             return {
                 ...state,
-                cart: [...state.cart, { movie, quantity: 1 }],
+                cart,
             }
         }),
 
