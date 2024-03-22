@@ -96,6 +96,8 @@ export const useMoviesStore = create<MoviesStore>((set, get) => ({
                 (cartItem) => cartItem.movie.id !== id
             )
 
+            setCartLocalStorage(newCart)
+
             return { cart: newCart }
         })
     },
